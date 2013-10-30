@@ -458,6 +458,7 @@
 				GCC_PREFIX_HEADER = "weiboApp/weiboApp-Prefix.pch";
 				INFOPLIST_FILE = "weiboApp/weiboApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -472,6 +473,7 @@
 				GCC_PREFIX_HEADER = "weiboApp/weiboApp-Prefix.pch";
 				INFOPLIST_FILE = "weiboApp/weiboApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
