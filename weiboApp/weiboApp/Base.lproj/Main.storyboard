@@ -39,6 +39,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="96x-Sc-8UP" id="B8j-S0-65a"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="TZo-eN-txj"/>
+                        <outlet property="webView" destination="7WV-Od-31p" id="J87-8H-5jY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
