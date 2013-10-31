@@ -55,6 +55,19 @@
     }
 }
 
+
+- (void) goWebView {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.9];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+    _imageView.hidden = YES;
+    [UIView commitAnimations];
+}
+
+- (void) goMainView {
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
