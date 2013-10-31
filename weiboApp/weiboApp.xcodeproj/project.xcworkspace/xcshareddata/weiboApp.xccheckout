@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>340061BC-62A3-4407-AEAE-7BB95F9B42F9</string>
+	<string>022CAD93-A911-4AD3-9D35-C4715FCA1C98</string>
 	<key>IDESourceControlProjectName</key>
 	<string>weiboApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>09C51689-4770-4A67-BD99-14C7DAD134A1</key>
-		<string>https://github.com/liaocpen/weiboApp</string>
+		<key>4961978E-2544-4A11-9EE7-DEF553E9CF55</key>
+		<string>https://github.com/liaocpen/weiboApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>weiboApp/weiboApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>09C51689-4770-4A67-BD99-14C7DAD134A1</key>
+		<key>4961978E-2544-4A11-9EE7-DEF553E9CF55</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/liaocpen/weiboApp</string>
+	<string>https://github.com/liaocpen/weiboApp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>09C51689-4770-4A67-BD99-14C7DAD134A1</string>
+	<string>4961978E-2544-4A11-9EE7-DEF553E9CF55</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>09C51689-4770-4A67-BD99-14C7DAD134A1</string>
+			<string>4961978E-2544-4A11-9EE7-DEF553E9CF55</string>
 			<key>IDESourceControlWCCName</key>
 			<string>weiboApp</string>
 		</dict>
