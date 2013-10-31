@@ -7,9 +7,12 @@
 //
 
 #import "InitViewController.h"
-#import "JSONKit.h"
-
+#import "MBProgressHUD.h"
 @interface InitViewController ()
+{
+    NSTimer *_timer;
+    MBProgressHUD *_hud;
+}
 
 @end
 
@@ -28,11 +31,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSString *urlString = @"https://api.weibo.com/oauth2/authorize?client_id=579864993&redirect_uri=http://www.baidu.com&response_type=code&display=mobile&state=authorize";
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-    [self.webView setDelegate:self];
-    [_webView loadRequest:request];
-    _imageView.hidden  = YES;
+    _hud = [[MBProgressHUD alloc] init];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"] == nil) {
+        _hud.labelText = @"正在加载授权页面.....";
+        [_hud show:YES];
+        [self.view addSubview:_hud];
+        
+        NSString *oauthUrlString = [InfoForSina returnOAuthUrlString];
+        
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:oauthUrlString]];
+        [self.webView setDelegate:self];
+        [_webView loadRequest:request];
+        _imageView.hidden  = NO;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goWebView) userInfo:nil repeats:NO];
+        
+    } else {
+        _hud.labelText = @"正在加载微博内容....";
+        [_hud show:YES];
+        [self.view addSubview:_hud];
+        _imageView.hidden = NO;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goMainView) userInfo:nil repeats:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning

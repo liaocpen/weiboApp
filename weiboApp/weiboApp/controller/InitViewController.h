@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfoForSina.h"
+
+
 
 @interface InitViewController : UIViewController<UIWebViewDelegate>
 
