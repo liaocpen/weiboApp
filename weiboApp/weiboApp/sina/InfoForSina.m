@@ -49,8 +49,6 @@
     [[NSUserDefaults standardUserDefaults] setObject:[uidDictionary objectForKey:@"uid"] forKey:@"uid"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    
-    
 }
 
 

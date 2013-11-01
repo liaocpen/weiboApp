@@ -8,20 +8,46 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-JSONKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>17FFE630CF8243478C4FEB60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B2F0DC3C40C4F6F8B26CA70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96619714E33340CFA19B44FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D76B55946DBB42318E153AB5</key>
 		<dict>
 			<key>primary</key>
@@ -33,6 +59,11 @@
 			<true/>
 		</dict>
 		<key>F19BA12B5C58492FA7ED080F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF4023020D884CD7A401E29E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
