@@ -10,6 +10,8 @@
 
 @interface DeckViewController ()
 
+@property (nonatomic, strong) MainViewController *centerController;
+
 @end
 
 @implementation DeckViewController
