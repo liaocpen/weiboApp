@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0427F8481822393900791B70 /* InfoForSina.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F8471822393900791B70 /* InfoForSina.m */; };
+		0427F84D18277EA800791B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F84C18277EA800791B70 /* AppDelegate.m */; };
 		0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433530C1820F85C005AB8D4 /* InitViewController.m */; };
 		04335311182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */; };
 		18C74BB018200AC200674586 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BAF18200AC200674586 /* Foundation.framework */; };
@@ -15,9 +16,7 @@
 		18C74BB418200AC200674586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BB318200AC200674586 /* UIKit.framework */; };
 		18C74BBA18200AC200674586 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18C74BB818200AC200674586 /* InfoPlist.strings */; };
 		18C74BBC18200AC200674586 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C74BBB18200AC200674586 /* main.m */; };
-		18C74BC018200AC200674586 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C74BBF18200AC200674586 /* AppDelegate.m */; };
 		18C74BC318200AC200674586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C74BC118200AC200674586 /* Main.storyboard */; };
-		18C74BC618200AC200674586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C74BC518200AC200674586 /* ViewController.m */; };
 		18C74BC818200AC200674586 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C74BC718200AC200674586 /* Images.xcassets */; };
 		18C74BCF18200AC200674586 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BCE18200AC200674586 /* XCTest.framework */; };
 		18C74BD018200AC200674586 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BAF18200AC200674586 /* Foundation.framework */; };
@@ -40,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0427F8461822393900791B70 /* InfoForSina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoForSina.h; path = sina/InfoForSina.h; sourceTree = "<group>"; };
 		0427F8471822393900791B70 /* InfoForSina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoForSina.m; path = sina/InfoForSina.m; sourceTree = "<group>"; };
+		0427F84B18277EA800791B70 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0427F84C18277EA800791B70 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0433530B1820F85C005AB8D4 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitViewController.h; path = controller/InitViewController.h; sourceTree = "<group>"; };
 		0433530C1820F85C005AB8D4 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitViewController.m; path = controller/InitViewController.m; sourceTree = "<group>"; };
 		04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = U74P176T72D61F1409DT20121211115111.jpg; path = resource/img/U74P176T72D61F1409DT20121211115111.jpg; sourceTree = "<group>"; };
@@ -51,11 +52,7 @@
 		18C74BB918200AC200674586 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18C74BBB18200AC200674586 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18C74BBD18200AC200674586 /* weiboApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weiboApp-Prefix.pch"; sourceTree = "<group>"; };
-		18C74BBE18200AC200674586 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		18C74BBF18200AC200674586 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18C74BC218200AC200674586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18C74BC418200AC200674586 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18C74BC518200AC200674586 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18C74BC718200AC200674586 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18C74BCD18200AC200674586 /* weiboAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weiboAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C74BCE18200AC200674586 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -101,6 +98,7 @@
 		0427F83D1822386D00791B70 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				18C74BC118200AC200674586 /* Main.storyboard */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -112,6 +110,15 @@
 				0427F8471822393900791B70 /* InfoForSina.m */,
 			);
 			name = sina;
+			sourceTree = "<group>";
+		};
+		0427F84A18277EA800791B70 /* appDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0427F84B18277EA800791B70 /* AppDelegate.h */,
+				0427F84C18277EA800791B70 /* AppDelegate.m */,
+			);
+			path = appDelegate;
 			sourceTree = "<group>";
 		};
 		0433530A1820F80A005AB8D4 /* controller */ = {
@@ -174,16 +181,12 @@
 		18C74BB518200AC200674586 /* weiboApp */ = {
 			isa = PBXGroup;
 			children = (
+				0427F84A18277EA800791B70 /* appDelegate */,
 				0427F842182238FE00791B70 /* sina */,
 				0427F83D1822386D00791B70 /* views */,
 				0427F83C1822385100791B70 /* models */,
 				0433530E18210555005AB8D4 /* resource */,
 				0433530A1820F80A005AB8D4 /* controller */,
-				18C74BBE18200AC200674586 /* AppDelegate.h */,
-				18C74BBF18200AC200674586 /* AppDelegate.m */,
-				18C74BC118200AC200674586 /* Main.storyboard */,
-				18C74BC418200AC200674586 /* ViewController.h */,
-				18C74BC518200AC200674586 /* ViewController.m */,
 				18C74BC718200AC200674586 /* Images.xcassets */,
 				18C74BB618200AC200674586 /* Supporting Files */,
 			);
@@ -352,9 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0427F84D18277EA800791B70 /* AppDelegate.m in Sources */,
 				0427F8481822393900791B70 /* InfoForSina.m in Sources */,
-				18C74BC618200AC200674586 /* ViewController.m in Sources */,
-				18C74BC018200AC200674586 /* AppDelegate.m in Sources */,
 				0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */,
 				18C74BBC18200AC200674586 /* main.m in Sources */,
 			);

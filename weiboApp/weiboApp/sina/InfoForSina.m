@@ -51,10 +51,26 @@
     
 }
 
++ (NSString *) returnFollowersUrlStringWithCursor:(int)cursor {
+    NSString *uidString = [[NSUserDefaults standardUserDefaults] objectForKey:@"uid"];
+    return  [NSString stringWithFormat:@"%@?access_token=%@&uid=%lld&cursor=%d",FOLLOWERS_URL, [InfoForSina returnAccessTokenString], [uidString longLongValue], cursor];
+}
 
++ (NSString *) returnFriendsTimeLintURLString:(int)page {
+    return [NSString stringWithFormat:@"%@?access_token=%@&page=%d",
+            FRIENDSHIPS_TIMELINE, [InfoForSina returnAccessTokenString], page];
+}
 
++ (NSString *) returnUserTimeLineURLString {
+    NSString *uidString = [[NSUserDefaults standardUserDefaults] objectForKey:@"uid"];
+    return [NSString stringWithFormat:@"%@?access_token=%@&id=%@",
+            USERS_TIMELINE, [InfoForSina returnAccessTokenString], uidString];
+}
 
-
++ (NSString *) returnCommentUrlStringWithID:(long long)weiboID page:(int)page {
+    NSString *urlString = [[NSString alloc] initWithFormat:@"%@?access_token=%@&id=%lld&page=%d", COMMENTS, [InfoForSina returnAccessTokenString], weiboID, page];
+    return urlString;
+}
 
 
 

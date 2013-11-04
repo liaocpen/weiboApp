@@ -65,7 +65,13 @@
 }
 
 - (void) goMainView {
-
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.9];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+    [_hud setHidden:YES];
+    [UIView commitAnimations];
+    [_hud removeFromSuperview];
+    [self performSegueWithIdentifier:@"MainSegue" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning
