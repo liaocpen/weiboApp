@@ -72,7 +72,7 @@
         <!--Main View Controller - 主页-->
         <scene sceneID="q20-qu-9o2">
             <objects>
-                <tableViewController storyboardIdentifier="MainViewController" id="NNe-9I-tMf" customClass="MainViewController" sceneMemberID="viewController">
+                <tableViewController id="NNe-9I-tMf" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7pI-f3-18M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
         <!--Navigation Controller-->
         <scene sceneID="i6d-il-HLH">
             <objects>
-                <navigationController definesPresentationContext="YES" id="KU2-A8-YjI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainViewController" definesPresentationContext="YES" id="KU2-A8-YjI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vby-Bl-nXy">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

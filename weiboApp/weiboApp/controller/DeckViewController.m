@@ -29,6 +29,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    _centerController = (MainViewController *)[sb instantiateViewControllerWithIdentifier:@"MainViewController"];
+    
+    [self.view addSubview:_centerController.view];
+    [_centerController.view setTag:1];
+    [_centerController.view setFrame:self.view.bounds];
 }
 
 - (void)didReceiveMemoryWarning

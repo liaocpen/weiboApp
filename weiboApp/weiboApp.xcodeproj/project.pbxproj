@@ -14,8 +14,9 @@
 		0427F860182788DC00791B70 /* path3408-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0427F85B182788DC00791B70 /* path3408-0.png */; };
 		0427F861182788DC00791B70 /* path3879-7-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0427F85C182788DC00791B70 /* path3879-7-3.png */; };
 		0427F862182788DC00791B70 /* path4391-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0427F85D182788DC00791B70 /* path4391-2.png */; };
-		0427F8651827AA3F00791B70 /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F8641827AA3F00791B70 /* DeckViewController.m */; };
-		0427F86B1827AF9C00791B70 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F86A1827AF9C00791B70 /* MainViewController.m */; };
+		0427F8711828CEF500791B70 /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F8701828CEF500791B70 /* DeckViewController.m */; };
+		0427F8741828CF1800791B70 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F8731828CF1800791B70 /* MainViewController.m */; };
+		0427F87B1828D05F00791B70 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F87A1828D05F00791B70 /* Status.m */; };
 		0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433530C1820F85C005AB8D4 /* InitViewController.m */; };
 		04335311182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */; };
 		18C74BB018200AC200674586 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BAF18200AC200674586 /* Foundation.framework */; };
@@ -53,10 +54,12 @@
 		0427F85B182788DC00791B70 /* path3408-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "path3408-0.png"; sourceTree = "<group>"; };
 		0427F85C182788DC00791B70 /* path3879-7-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "path3879-7-3.png"; sourceTree = "<group>"; };
 		0427F85D182788DC00791B70 /* path4391-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "path4391-2.png"; sourceTree = "<group>"; };
-		0427F8631827AA3F00791B70 /* DeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckViewController.h; sourceTree = "<group>"; };
-		0427F8641827AA3F00791B70 /* DeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckViewController.m; sourceTree = "<group>"; };
-		0427F8691827AF9C00791B70 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		0427F86A1827AF9C00791B70 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0427F86F1828CEF500791B70 /* DeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeckViewController.h; path = controller/DeckViewController.h; sourceTree = "<group>"; };
+		0427F8701828CEF500791B70 /* DeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeckViewController.m; path = controller/DeckViewController.m; sourceTree = "<group>"; };
+		0427F8721828CF1800791B70 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = controller/MainViewController.h; sourceTree = "<group>"; };
+		0427F8731828CF1800791B70 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = controller/MainViewController.m; sourceTree = "<group>"; };
+		0427F8791828D05F00791B70 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Status.h; path = models/Status.h; sourceTree = "<group>"; };
+		0427F87A1828D05F00791B70 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Status.m; path = models/Status.m; sourceTree = "<group>"; };
 		0433530B1820F85C005AB8D4 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitViewController.h; path = controller/InitViewController.h; sourceTree = "<group>"; };
 		0433530C1820F85C005AB8D4 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitViewController.m; path = controller/InitViewController.m; sourceTree = "<group>"; };
 		04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = U74P176T72D61F1409DT20121211115111.jpg; path = resource/img/U74P176T72D61F1409DT20121211115111.jpg; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 		0427F83C1822385100791B70 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				0427F8791828D05F00791B70 /* Status.h */,
+				0427F87A1828D05F00791B70 /* Status.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -152,12 +157,12 @@
 		0433530A1820F80A005AB8D4 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				0427F86F1828CEF500791B70 /* DeckViewController.h */,
+				0427F8701828CEF500791B70 /* DeckViewController.m */,
 				0433530B1820F85C005AB8D4 /* InitViewController.h */,
 				0433530C1820F85C005AB8D4 /* InitViewController.m */,
-				0427F8631827AA3F00791B70 /* DeckViewController.h */,
-				0427F8641827AA3F00791B70 /* DeckViewController.m */,
-				0427F8691827AF9C00791B70 /* MainViewController.h */,
-				0427F86A1827AF9C00791B70 /* MainViewController.m */,
+				0427F8721828CF1800791B70 /* MainViewController.h */,
+				0427F8731828CF1800791B70 /* MainViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -394,11 +399,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0427F84D18277EA800791B70 /* AppDelegate.m in Sources */,
-				0427F86B1827AF9C00791B70 /* MainViewController.m in Sources */,
+				0427F8741828CF1800791B70 /* MainViewController.m in Sources */,
 				0427F8481822393900791B70 /* InfoForSina.m in Sources */,
 				0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */,
-				0427F8651827AA3F00791B70 /* DeckViewController.m in Sources */,
+				0427F8711828CEF500791B70 /* DeckViewController.m in Sources */,
 				18C74BBC18200AC200674586 /* main.m in Sources */,
+				0427F87B1828D05F00791B70 /* Status.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
