@@ -89,7 +89,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="主页" id="F3H-X2-8oT">
-                        <barButtonItem key="leftBarButtonItem" title="刷新" id="6Gx-YZ-YYa"/>
+                        <barButtonItem key="leftBarButtonItem" title="刷新" id="6Gx-YZ-YYa">
+                            <connections>
+                                <action selector="refreshButton:" destination="NNe-9I-tMf" id="Ioc-05-WQj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="发微博" id="LG0-hW-ykU"/>
                     </navigationItem>
                 </tableViewController>

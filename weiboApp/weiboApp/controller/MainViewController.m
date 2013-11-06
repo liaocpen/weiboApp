@@ -136,7 +136,15 @@
     [self getWeiboData:_page];
 }
     
-
+#pragma mark - UIScrollViewDelegate
+//当tableView滑动到底的情况
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGPoint contentOffsetPoint = self.tableView.contentOffset;
+    CGRect frame = self.tableView.frame;
+    if (contentOffsetPoint.y == self.tableView.contentSize.height - frame.size.height) {
+        [self getWeiboData:++_page];
+    }
+}
 
 
 
