@@ -39,7 +39,7 @@
 - (void)setupCell:(Status *)status{
     //用block设置头像
     __block UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [headImageView setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, <#CGFloat width#>, <#CGFloat height#>)]
+    
     
 }
 @end
