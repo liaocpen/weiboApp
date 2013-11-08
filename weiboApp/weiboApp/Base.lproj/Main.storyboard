@@ -53,7 +53,6 @@
         <!--Deck View Controller - 主页-->
         <scene sceneID="c73-sq-Mjr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gov-T9-GnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="8BH-ve-QKe" customClass="DeckViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lpe-Kq-nId"/>
@@ -66,6 +65,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="主页" image="path4391-2.png" id="rTW-cD-SVL"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gov-T9-GnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473" y="-1665"/>
         </scene>
@@ -120,7 +120,7 @@
         <scene sceneID="the-gQ-P1F">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Pl1-wu-A5g" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5vt-xp-GDt">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -216,7 +216,6 @@
         <!--View Controller - 关注列表-->
         <scene sceneID="KRf-JA-dAT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XlG-Dl-5HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0rD-b0-chS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zmx-Jq-37T"/>
@@ -229,6 +228,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="关注列表" image="path3879-7-3.png" id="YTA-aK-YUx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XlG-Dl-5HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="-1000"/>
         </scene>

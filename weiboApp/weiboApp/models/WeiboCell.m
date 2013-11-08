@@ -8,6 +8,7 @@
 
 #import "WeiboCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImageView+UImageViewEx.h"
 
 
 @implementation WeiboCell
@@ -122,6 +123,11 @@
             __block UIImageView *retwitterImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
             __block UIImage *retwitterImage = [[UIImage alloc] init];
             
+            [retwitterImageView setImageUrlString:status.retweetedStatus.originalPic];
+            [retwitterImageView addDetailShow];
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                
+            });
         }
     }
     
