@@ -57,9 +57,66 @@ static const void *myKey = (void *)@"myKey";
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] init];
     hud.dimBackground = YES;
+    hud.labelText = @"loading....";
+    [hud show:YES];
+    [coverView addSubview:hud];
+    
+    __block UIImage *image;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+            image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrlString]]];
+        });
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [hud removeFromSuperview];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            imageView.tag = kImageViewTag;
+            CGRect rect = [self convertRect:self.bounds toView:self.window];
+            imageView.frame = rect;
+            
+            
+            [coverView addSubview:imageView];
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:KAnimationDuration];
+            imageView.frame = [self autoFitFrame];
+            
+            if (imageView.frame.size.height > self.window.frame.size.height) {
+                [imageView setFrame:CGRectMake(coverView.frame.size.width / 2 - kImageViewWidth / 2, 20, kImageViewWidth, imageView.frame.size.height)];
+                
+                //添加拖动手势
+                UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
+                [panGesture setMaximumNumberOfTouches:1];
+                [panGesture setMinimumNumberOfTouches:1];
+                [coverView addGestureRecognizer:panGesture];
+                
+            }
+            [UIView commitAnimations];
+        });
+    });
     
     
     
+}
+
+//处理拖拉手势
+- (void) panView:(UIPanGestureRecognizer *)panGestureRecongnizer{
+    
+    UIImageView *view = (UIImageView *)[[self window] viewWithTag:kImageViewTag];
+    if (panGestureRecongnizer.state == UIGestureRecognizerStateBegan || panGestureRecongnizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [panGestureRecongnizer translationInView: view.superview];
+        [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y + translation.y, view.frame.size.width, view.frame.size.height)];
+        [panGestureRecongnizer setTranslation:CGPointZero inView:view.superview];
+    }
+    
+}
+
+//自动按原UIImageView等比例调整目标的rect
+- (CGRect)autoFitFrame {
+    //固定宽 高 等比例动态变化
+    float width = kImageViewWidth;
+    float targetHeight = (width * self.frame.size.height) / self.frame.size.width;
+    UIView *coverView = (UIView *)[[self window] viewWithTag:kCoverViewTag];
+    CGRect targetRect = CGRectMake(coverView.frame.size.width / 2 - width / 2, coverView.frame.size.height / 2 - targetHeight /2, width, targetHeight);
+    return targetRect;
 }
 
 - (void)hiddenViewAnimation {

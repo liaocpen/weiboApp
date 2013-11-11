@@ -125,8 +125,13 @@
             
             [retwitterImageView setImageUrlString:status.retweetedStatus.originalPic];
             [retwitterImageView addDetailShow];
+            
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                retwitterImage = [self getImageFromURL:status.retweetedStatus.thumbnailPic];
                 
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                });
             });
         }
     }
