@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "JSONKit.h"
 #import "MBProgressHUD.h"
+#import "WeiboCell.h"
+
 
 #define FONT_SIZE 14.0f;
 #define CELL_CONTENT_WIDTH 320.0f;
@@ -39,6 +41,7 @@
     _array = [[NSMutableArray alloc] init];
     
     [self addRefreshViewController];
+    [self getWeiboData:_page];
 }
 
 
@@ -64,11 +67,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"MainCell";
+    WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Status *status = [[Status alloc] init];
+    status = [self.statusArray objectAtIndex:[indexPath row]];
+    if (cell != nil) {
+        [cell removeFromSuperview];
+    }
+    cell = [[WeiboCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    [cell setupCell:status];
     
-    // Configure the cell...
-    
+    //设置被选中cell背景颜色
+    UIView *selectionView = [[UIView alloc] init];
+    selectionView.backgroundColor = [UIColor whiteColor];
+    [cell setBackgroundView:selectionView];
     return cell;
 }
 

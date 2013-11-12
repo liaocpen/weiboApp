@@ -86,10 +86,10 @@
     //动态获取contentLabel高度
     //ios 7下 方法废弃了
 //    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), MAXFLOAT);
-//    CGSize size = [status.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontOfSize:FONT_SIZE]}];
+//    CGSize size = [status.text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
     
     
-    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:status.text attributes:@{NSAttachmentAttributeName: contentLabel.font}];
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:status.text attributes:@{NSFontAttributeName: contentLabel.font}];
     CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2, MAXFLOAT} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     CGSize size = rect.size;
     
@@ -109,7 +109,7 @@
         [retwitterContentLabel setNumberOfLines:0];
         [retwitterContentLabel  setFont:[UIFont systemFontOfSize:FONT_SIZE]];
         [[self contentView] addSubview:retwitterContentLabel];
-        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:retwitterContentText attributes:@{NSAttachmentAttributeName: retwitterContentLabel.font}];
+        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:retwitterContentText attributes:@{NSFontAttributeName: retwitterContentLabel.font}];
         CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2, MAXFLOAT} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
         CGSize size = rect.size;
         [retwitterContentLabel setText:retwitterContentText];
@@ -130,12 +130,75 @@
                 retwitterImage = [self getImageFromURL:status.retweetedStatus.thumbnailPic];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    CGSize retwitterImageSize = CGSizeMake(retwitterImage.size.width, retwitterImage.size.height);
+                    
+                    [retwitterImageView setFrame:CGRectMake((CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2) - retwitterImageSize.width) / 2, retwitterContentLabel.frame.origin.y + retwitterContentLabel.frame.size.height + CELL_CONTENT_MARGIN, retwitterImageSize.width, retwitterImageSize.height)];
+                    [retwitterImageView setImage:retwitterImage];
+                    [[self contentView] addSubview:retwitterImageView];
+                });
+            });
+            yHeight += 120;
+        }
+    }
+    //无转发
+    else {
+        //微博有图像
+        if (status.hasImage) {
+            //设置图像
+            __block UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+            [imageView setImageUrlString:status.originalPic];
+            [imageView addDetailShow];
+            
+            
+            __block UIImage *image = [[UIImage alloc] init];
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                image = [self getImageFromURL:status.thumbnailPic];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CGSize imageSize = CGSizeMake(image.size.width, image.size.height);
+                    
+                    [imageView setFrame:CGRectMake((CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2) - imageSize.width)/ 2, contentLabel.frame.origin.y + contentLabel.frame.size.height + CELL_CONTENT_MARGIN, imageSize.width, imageSize.height)];
+                    [imageView setImage:image];
+                    [[self contentView] addSubview:imageView];
                     
                 });
             });
+            yHeight += 120;
+            
         }
     }
+    yHeight += (CELL_CONTENT_MARGIN * 2);
     
+    UILabel *fromLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [fromLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+    [[self contentView] addSubview:fromLabel];
+
+    [fromLabel setText:[NSString stringWithFormat:@"来自：%@", status.source]];
+    [fromLabel setTextAlignment:NSTextAlignmentLeft];
+    fromLabel.adjustsFontSizeToFitWidth = YES;
+    [fromLabel setFrame:CGRectMake(CELL_CONTENT_MARGIN, yHeight, 140, 121)];
+    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+    [[self contentView] addSubview:timeLabel];
+    
+    [timeLabel setText:[self getTimeString:status.createdAt]];
+    [timeLabel setTextAlignment:NSTextAlignmentRight];
+    [timeLabel setAdjustsFontSizeToFitWidth:YES];
+    [timeLabel setFrame:CGRectMake(178, yHeight, 140, 21)];
+    
+}
+
+//格式化时间
+- (NSString *)getTimeString: (NSString *)string {
+    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
+    [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+     [inputFormatter setDateFormat:@"EEE MMM dd HH:mm:ss Z yyyy"];
+     NSDate *inputDate = [inputFormatter dateFromString:string];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[NSLocale currentLocale]];
+    [outputFormatter setDateFormat:@"HH:mm:ss"];
+    NSString *str = [outputFormatter stringFromDate:inputDate];
+    return str;
 }
 
 - (UIImage *) getImageFromURL:(NSString *)fileURL{
