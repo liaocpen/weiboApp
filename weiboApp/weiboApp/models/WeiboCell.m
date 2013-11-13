@@ -166,7 +166,7 @@
             
         }
     }
-    yHeight += (CELL_CONTENT_MARGIN * 2);
+    yHeight += CELL_CONTENT_MARGIN ;
     
     UILabel *fromLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [fromLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
@@ -175,7 +175,7 @@
     [fromLabel setText:[NSString stringWithFormat:@"来自：%@", status.source]];
     [fromLabel setTextAlignment:NSTextAlignmentLeft];
     fromLabel.adjustsFontSizeToFitWidth = YES;
-    [fromLabel setFrame:CGRectMake(CELL_CONTENT_MARGIN, yHeight, 140, 121)];
+    [fromLabel setFrame:CGRectMake(CELL_CONTENT_MARGIN, yHeight, 140, 21)];
     UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
     [[self contentView] addSubview:timeLabel];

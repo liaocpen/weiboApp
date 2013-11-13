@@ -12,9 +12,9 @@
 #import "WeiboCell.h"
 
 
-#define FONT_SIZE 14.0f;
-#define CELL_CONTENT_WIDTH 320.0f;
-#define CELL_CONTENT_MARGIN 10.0f;
+#define FONT_SIZE 14.0f
+#define CELL_CONTENT_WIDTH 320.0f
+#define CELL_CONTENT_MARGIN 10.0f
 
 @interface MainViewController () {
     MBProgressHUD *hud;
@@ -36,6 +36,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGRect rect = self.tableView.frame;
+    [self.tableView setFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width,rect.size.height - 44)];
+    
     _statusArray = [[NSMutableArray alloc] init];
     _page = 1;
     _array = [[NSMutableArray alloc] init];
@@ -84,7 +87,65 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Status *status = [[Status alloc] init];
+    status = [self.statusArray objectAtIndex:[indexPath row]];
+    
+    //设置高度
+    CGFloat yHeight = 70.0;
+    
+    //动态获取微博内容高度
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:status.text attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT_SIZE]}];
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    CGSize size = rect.size;
+    yHeight += size.height + CELL_CONTENT_MARGIN;
+    
+    //转发的情况
+    Status *retwitterStatus = status.retweetedStatus;
+    
+    //有转发
+    if (status.hasRetwitter && ![retwitterStatus isEqual:[NSNull null]])
+    {
+        //转发内容的文本内容
+        NSString *retwitterContentText = [NSString stringWithFormat:@"%@:%@",retwitterStatus.screenName, retwitterStatus.text];
+        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:retwitterContentText attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT_SIZE]}];
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2, MAXFLOAT} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+        CGSize size = rect.size;
+        yHeight += size.height + CELL_CONTENT_MARGIN;
+        
+        //有转发图片
+        if (status.haveRetwitterImage) {
+            yHeight += 120 + CELL_CONTENT_MARGIN;
+        }
+    }
+    //无转发
+    else {
+        if (status.hasImage) {
+            yHeight += 120 + CELL_CONTENT_MARGIN;
+        }
+    }
+   // yHeight += 20;
+    return yHeight;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    _detailStatus = [[Status alloc] init];
+    _detailStatus = [_statusArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+}
+
 #pragma mark -self Method
+
+- (void)refreshButton:(id)sender {
+    _statusArray = [[NSMutableArray alloc] init];
+   //重新获取数据
+    _page = 1;
+    [self getWeiboData:_page];
+}
 
 - (void) getWeiboData:(int) page {
     
@@ -142,11 +203,6 @@
     }
 }
 
-- (void)refreshButton:(id)sender{
-    _statusArray = [[NSMutableArray alloc] init];
-    _page = 1;
-    [self getWeiboData:_page];
-}
     
 #pragma mark - UIScrollViewDelegate
 //当tableView滑动到底的情况
@@ -156,10 +212,10 @@
     if (contentOffsetPoint.y == self.tableView.contentSize.height - frame.size.height) {
         [self getWeiboData:++_page];
     }
+    
+    
+ 
 }
-
-
-
 
 
 
