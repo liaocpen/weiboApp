@@ -86,6 +86,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mSK-4f-zIx" kind="push" id="rSI-4d-A8O"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -101,6 +104,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6A-BE-caU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444" y="-1653"/>
+        </scene>
+        <!--Table View Controller - 微博评论-->
+        <scene sceneID="GbY-I5-2lX">
+            <objects>
+                <tableViewController id="mSK-4f-zIx" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fHB-20-Aqo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="2zY-jF-0j2">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2zY-jF-0j2" id="UFA-tb-Q00">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mSK-4f-zIx" id="zcd-AW-qLp"/>
+                            <outlet property="delegate" destination="mSK-4f-zIx" id="aNy-0B-Qbt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="微博评论" id="k2f-AL-7au">
+                        <barButtonItem key="rightBarButtonItem" title="评论" id="tOt-V2-Xpr"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Guy-6n-cd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-1542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i6d-il-HLH">
