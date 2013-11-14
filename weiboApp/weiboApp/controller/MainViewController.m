@@ -36,12 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-=======
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
     //self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 49, 0);
 //    self.automaticallyAdjustsScrollViewInsets = YES;
->>>>>>> b4d903534272b448dd99ba02ad4256c53cc31a67
+
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
          self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -159,7 +157,7 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         hud  = [[MBProgressHUD alloc] init];
         
-        hud.dimBackground = YES;
+       // hud.dimBackground = YES;
         hud.labelText = @"正在加载数据...";
         [hud show:YES];
         [self.view addSubview:hud];
@@ -213,17 +211,17 @@
     
 #pragma mark - UIScrollViewDelegate
 //当tableView滑动到底的情况
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
-    CGPoint contentOffsetPoint = self.tableView.contentOffset;
-    CGRect frame = self.tableView.frame;
-    if (contentOffsetPoint.y == self.tableView.contentSize.height - frame.size.height) {
-        [self getWeiboData:++_page];
-    }
-    
-    
- 
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//
+//    CGPoint contentOffsetPoint = self.tableView.contentOffset;
+//    CGRect frame = self.tableView.frame;
+//    if (contentOffsetPoint.y == self.tableView.contentSize.height - frame.size.height) {
+//        [self getWeiboData:++_page];
+//    }
+//    
+//    
+// 
+//}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
