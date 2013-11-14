@@ -36,7 +36,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
+=======
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
+    //self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 49, 0);
+//    self.automaticallyAdjustsScrollViewInsets = YES;
+>>>>>>> b4d903534272b448dd99ba02ad4256c53cc31a67
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+         self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     _statusArray = [[NSMutableArray alloc] init];
     _page = 1;
     _array = [[NSMutableArray alloc] init];
@@ -97,7 +106,7 @@
     NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:status.text attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT_SIZE]}];
     CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     CGSize size = rect.size;
-    yHeight += size.height + CELL_CONTENT_MARGIN;
+    yHeight += (size.height + CELL_CONTENT_MARGIN);
     
     //转发的情况
     Status *retwitterStatus = status.retweetedStatus;
@@ -110,17 +119,17 @@
         NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:retwitterContentText attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT_SIZE]}];
         CGRect rect = [attributedText boundingRectWithSize:(CGSize){CELL_CONTENT_WIDTH - CELL_CONTENT_MARGIN * 2, MAXFLOAT} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
         CGSize size = rect.size;
-        yHeight += size.height + CELL_CONTENT_MARGIN;
+        yHeight += (size.height + CELL_CONTENT_MARGIN);
         
         //有转发图片
         if (status.haveRetwitterImage) {
-            yHeight += 120 + CELL_CONTENT_MARGIN;
+            yHeight += (120 + CELL_CONTENT_MARGIN);
         }
     }
     //无转发
     else {
         if (status.hasImage) {
-            yHeight += 120 + CELL_CONTENT_MARGIN;
+            yHeight += (120 + CELL_CONTENT_MARGIN);
         }
     }
     yHeight += 20;
@@ -205,6 +214,7 @@
 #pragma mark - UIScrollViewDelegate
 //当tableView滑动到底的情况
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
     CGPoint contentOffsetPoint = self.tableView.contentOffset;
     CGRect frame = self.tableView.frame;
     if (contentOffsetPoint.y == self.tableView.contentSize.height - frame.size.height) {
@@ -215,7 +225,12 @@
  
 }
 
-
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.tableView.contentOffset.y > self.tableView.contentSize.height - self.tableView.frame.size.height) {
+        [self getWeiboData:++_page];
+    }
+}
 
 
 @end
