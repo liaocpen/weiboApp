@@ -36,8 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGRect rect = self.tableView.frame;
-    [self.tableView setFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width,rect.size.height - 44)];
     
     _statusArray = [[NSMutableArray alloc] init];
     _page = 1;
@@ -125,7 +123,7 @@
             yHeight += 120 + CELL_CONTENT_MARGIN;
         }
     }
-   // yHeight += 20;
+    yHeight += 20;
     return yHeight;
 }
 
