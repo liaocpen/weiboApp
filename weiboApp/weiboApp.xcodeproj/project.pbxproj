@@ -19,10 +19,10 @@
 		0427F87B1828D05F00791B70 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F87A1828D05F00791B70 /* Status.m */; };
 		0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433530C1820F85C005AB8D4 /* InitViewController.m */; };
 		04335311182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */; };
+		04957A35183603B400A7F6A7 /* DetailWeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */; };
 		04CD0904182C93DE00CFC76E /* UIImageView+UImageViewEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD0903182C93DE00CFC76E /* UIImageView+UImageViewEx.m */; };
 		180425B61829438600B1C01A /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180425B51829438600B1C01A /* WeiboCell.m */; };
 		180425BA1829445300B1C01A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180425B91829445300B1C01A /* QuartzCore.framework */; };
-		1899D4F91835258D00D07D57 /* DetailWeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D4F81835258D00D07D57 /* DetailWeiboViewController.m */; };
 		18C74BB018200AC200674586 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BAF18200AC200674586 /* Foundation.framework */; };
 		18C74BB218200AC200674586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BB118200AC200674586 /* CoreGraphics.framework */; };
 		18C74BB418200AC200674586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C74BB318200AC200674586 /* UIKit.framework */; };
@@ -67,13 +67,13 @@
 		0433530B1820F85C005AB8D4 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitViewController.h; path = controller/InitViewController.h; sourceTree = "<group>"; };
 		0433530C1820F85C005AB8D4 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitViewController.m; path = controller/InitViewController.m; sourceTree = "<group>"; };
 		04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = U74P176T72D61F1409DT20121211115111.jpg; path = resource/img/U74P176T72D61F1409DT20121211115111.jpg; sourceTree = "<group>"; };
+		04957A33183603B400A7F6A7 /* DetailWeiboViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWeiboViewController.h; path = controller/DetailWeiboViewController.h; sourceTree = "<group>"; };
+		04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailWeiboViewController.m; path = controller/DetailWeiboViewController.m; sourceTree = "<group>"; };
 		04CD0902182C93DE00CFC76E /* UIImageView+UImageViewEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+UImageViewEx.h"; path = "category/UIImageView+UImageViewEx.h"; sourceTree = "<group>"; };
 		04CD0903182C93DE00CFC76E /* UIImageView+UImageViewEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+UImageViewEx.m"; path = "category/UIImageView+UImageViewEx.m"; sourceTree = "<group>"; };
 		180425B41829438600B1C01A /* WeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboCell.h; path = models/WeiboCell.h; sourceTree = "<group>"; };
 		180425B51829438600B1C01A /* WeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeiboCell.m; path = models/WeiboCell.m; sourceTree = "<group>"; };
 		180425B91829445300B1C01A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1899D4F71835258D00D07D57 /* DetailWeiboViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWeiboViewController.h; path = controller/DetailWeiboViewController.h; sourceTree = "<group>"; };
-		1899D4F81835258D00D07D57 /* DetailWeiboViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailWeiboViewController.m; path = controller/DetailWeiboViewController.m; sourceTree = "<group>"; };
 		18C74BAC18200AC200674586 /* weiboApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C74BAF18200AC200674586 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18C74BB118200AC200674586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,8 +177,8 @@
 				0433530C1820F85C005AB8D4 /* InitViewController.m */,
 				0427F8721828CF1800791B70 /* MainViewController.h */,
 				0427F8731828CF1800791B70 /* MainViewController.m */,
-				1899D4F71835258D00D07D57 /* DetailWeiboViewController.h */,
-				1899D4F81835258D00D07D57 /* DetailWeiboViewController.m */,
+				04957A33183603B400A7F6A7 /* DetailWeiboViewController.h */,
+				04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 			files = (
 				0427F84D18277EA800791B70 /* AppDelegate.m in Sources */,
 				0427F8741828CF1800791B70 /* MainViewController.m in Sources */,
-				1899D4F91835258D00D07D57 /* DetailWeiboViewController.m in Sources */,
+				04957A35183603B400A7F6A7 /* DetailWeiboViewController.m in Sources */,
 				0427F8481822393900791B70 /* InfoForSina.m in Sources */,
 				0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */,
 				180425B61829438600B1C01A /* WeiboCell.m in Sources */,

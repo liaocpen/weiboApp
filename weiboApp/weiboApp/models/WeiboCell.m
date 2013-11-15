@@ -202,9 +202,9 @@
 }
 
 - (UIImage *) getImageFromURL:(NSString *)fileURL{
-    UIImage *resultImage = [[UIImage alloc] init];
+    //UIImage *resultImage = [[UIImage alloc] init];
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-    resultImage = [UIImage imageWithData:data];
+   UIImage *resultImage = [UIImage imageWithData:data];
     return resultImage;
 }
 @end

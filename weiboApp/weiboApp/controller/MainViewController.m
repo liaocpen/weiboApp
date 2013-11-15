@@ -10,6 +10,8 @@
 #import "JSONKit.h"
 #import "MBProgressHUD.h"
 #import "WeiboCell.h"
+#import "DetailWeiboViewController.h"
+
 
 
 #define FONT_SIZE 14.0f
@@ -77,8 +79,8 @@
 {
     static NSString *CellIdentifier = @"MainCell";
     WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Status *status = [[Status alloc] init];
-    status = [self.statusArray objectAtIndex:[indexPath row]];
+    Status *status = [self.statusArray objectAtIndex:[indexPath row]];
+   // status =
     if (cell != nil) {
         [cell removeFromSuperview];
     }
@@ -94,8 +96,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Status *status = [[Status alloc] init];
-    status = [self.statusArray objectAtIndex:[indexPath row]];
+    //Status *status = [[Status alloc] init];
+    Status *status = [self.statusArray objectAtIndex:[indexPath row]];
     
     //设置高度
     CGFloat yHeight = 70.0;
@@ -142,6 +144,15 @@
     _detailStatus = [_statusArray objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"detailSegue" sender:self];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        DetailWeiboViewController *detailVC = [segue destinationViewController];
+        detailVC.status = _detailStatus;
+    }
+}
+
 
 #pragma mark -self Method
 
