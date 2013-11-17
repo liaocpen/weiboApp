@@ -27,11 +27,13 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _hud = [[MBProgressHUD alloc] init];
+    
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"] == nil) {
         _hud.labelText = @"正在加载授权页面.....";

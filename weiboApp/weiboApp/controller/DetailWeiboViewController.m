@@ -78,6 +78,19 @@
     });
 }
 
+- (NSString *) getTimeString:(NSString *)string  {
+    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
+    [[inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+     [inputFormatter setDateFormat:@"EEE MMM dd HH:mm:ss Z yyyy"];
+     NSDate *inputDate = [inputFormatter dateFromString:string];
+     
+     NSDateFormatter *outFormatter = [[NSDateFormatter alloc] init];
+     [outFormatter setLocale:[NSLocale currentLocale]];
+     [outFormatter setDateFormat:@"HH:mm:ss"];
+     NSString *str = [outFormatter stringFromDate:inputDate];
+     return str;
+    
+}
 
 #pragma mark - Table view data source
 
@@ -119,7 +132,7 @@
         //评论数据
         //获取一个评论
         NSDictionary *dictionary = [_commentArray objectAtIndex:indexPath.row - 1];
-        NSString *timeString = [dictionary objectForKey:@"created_id"];
+        NSString *timeString = [dictionary objectForKey:@"created_at"];
         //评论时间
         NSString *commentString = [dictionary objectForKey:@"text"];
         //评论用户
@@ -135,6 +148,22 @@
         userNameLabel.tag = 100;
         [[cell viewWithTag:100] removeFromSuperview];
         [[cell contentView] addSubview:userNameLabel];
+       
+        //设置评论发布时间
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        
+        [timeLabel setText:[self getTimeString:timeString]];
+        [timeLabel setTextAlignment:NSTextAlignmentRight];
+        timeLabel.adjustsFontSizeToFitWidth = YES;
+        [timeLabel setFrame:CGRectMake(170, CELL_CONTENT_MARGIN, 140, 20)];
+        timeLabel.tag = 101;
+        [[cell viewWithTag:101] removeFromSuperview];
+        [[cell contentView] addSubview:timeLabel];
+        
+        //评论内容
+        UILabel *commentLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        
     }
 }
 
