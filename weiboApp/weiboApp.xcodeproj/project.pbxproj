@@ -19,6 +19,8 @@
 		0427F87B1828D05F00791B70 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427F87A1828D05F00791B70 /* Status.m */; };
 		0433530D1820F85C005AB8D4 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433530C1820F85C005AB8D4 /* InitViewController.m */; };
 		04335311182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */; };
+		048F9C2E183CBF5000A3165A /* FansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F9C2D183CBF5000A3165A /* FansViewController.m */; };
+		048F9C31183CC0DA00A3165A /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F9C30183CC0DA00A3165A /* Users.m */; };
 		04957A35183603B400A7F6A7 /* DetailWeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */; };
 		04CD0904182C93DE00CFC76E /* UIImageView+UImageViewEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD0903182C93DE00CFC76E /* UIImageView+UImageViewEx.m */; };
 		180425B61829438600B1C01A /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180425B51829438600B1C01A /* WeiboCell.m */; };
@@ -67,6 +69,10 @@
 		0433530B1820F85C005AB8D4 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitViewController.h; path = controller/InitViewController.h; sourceTree = "<group>"; };
 		0433530C1820F85C005AB8D4 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitViewController.m; path = controller/InitViewController.m; sourceTree = "<group>"; };
 		04335310182105B2005AB8D4 /* U74P176T72D61F1409DT20121211115111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = U74P176T72D61F1409DT20121211115111.jpg; path = resource/img/U74P176T72D61F1409DT20121211115111.jpg; sourceTree = "<group>"; };
+		048F9C2C183CBF5000A3165A /* FansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FansViewController.h; path = controller/FansViewController.h; sourceTree = "<group>"; };
+		048F9C2D183CBF5000A3165A /* FansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FansViewController.m; path = controller/FansViewController.m; sourceTree = "<group>"; };
+		048F9C2F183CC0DA00A3165A /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Users.h; path = models/Users.h; sourceTree = "<group>"; };
+		048F9C30183CC0DA00A3165A /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Users.m; path = models/Users.m; sourceTree = "<group>"; };
 		04957A33183603B400A7F6A7 /* DetailWeiboViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWeiboViewController.h; path = controller/DetailWeiboViewController.h; sourceTree = "<group>"; };
 		04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailWeiboViewController.m; path = controller/DetailWeiboViewController.m; sourceTree = "<group>"; };
 		04CD0902182C93DE00CFC76E /* UIImageView+UImageViewEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+UImageViewEx.h"; path = "category/UIImageView+UImageViewEx.h"; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				0427F87A1828D05F00791B70 /* Status.m */,
 				180425B41829438600B1C01A /* WeiboCell.h */,
 				180425B51829438600B1C01A /* WeiboCell.m */,
+				048F9C2F183CC0DA00A3165A /* Users.h */,
+				048F9C30183CC0DA00A3165A /* Users.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -179,6 +187,8 @@
 				0427F8731828CF1800791B70 /* MainViewController.m */,
 				04957A33183603B400A7F6A7 /* DetailWeiboViewController.h */,
 				04957A34183603B400A7F6A7 /* DetailWeiboViewController.m */,
+				048F9C2C183CBF5000A3165A /* FansViewController.h */,
+				048F9C2D183CBF5000A3165A /* FansViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -425,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048F9C31183CC0DA00A3165A /* Users.m in Sources */,
 				0427F84D18277EA800791B70 /* AppDelegate.m in Sources */,
 				0427F8741828CF1800791B70 /* MainViewController.m in Sources */,
 				04957A35183603B400A7F6A7 /* DetailWeiboViewController.m in Sources */,
@@ -433,6 +444,7 @@
 				180425B61829438600B1C01A /* WeiboCell.m in Sources */,
 				0427F8711828CEF500791B70 /* DeckViewController.m in Sources */,
 				04CD0904182C93DE00CFC76E /* UIImageView+UImageViewEx.m in Sources */,
+				048F9C2E183CBF5000A3165A /* FansViewController.m in Sources */,
 				18C74BBC18200AC200674586 /* main.m in Sources */,
 				0427F87B1828D05F00791B70 /* Status.m in Sources */,
 			);
