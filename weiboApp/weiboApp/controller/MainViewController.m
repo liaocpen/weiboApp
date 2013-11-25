@@ -80,12 +80,16 @@
     static NSString *CellIdentifier = @"MainCell";
     WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Status *status = [self.statusArray objectAtIndex:[indexPath row]];
-   // status =
-    if (cell != nil) {
-        [cell removeFromSuperview];
+    if (cell == nil) {
+        cell = [[WeiboCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell = [[WeiboCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  
     [cell setupCell:status];
+//    if (cell != nil) {
+//        [cell removeFromSuperview];
+//    }
+//    cell = [[WeiboCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    [cell setupCell:status];
     
     //设置被选中cell背景颜色
     UIView *selectionView = [[UIView alloc] init];

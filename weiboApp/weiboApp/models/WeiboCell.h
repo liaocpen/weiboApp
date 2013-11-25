@@ -11,6 +11,8 @@
 
 @interface WeiboCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *label;
+
 - (void) setupCell: (Status *)status;
 
 
